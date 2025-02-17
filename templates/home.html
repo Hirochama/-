@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>香水レコメンド - 入力フォーム</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles2.css">
+</head>
+<body>
+    <h1>香水レコメンド - 入力フォーム</h1>
+    <form method="POST" action="/recommend">
+        <label>予算（価格）:
+            <input type="number" name="price" placeholder="10000" step="100">
+        </label>
+        <br><br>
+        
+<label>好みの香り（複数選択可）:</label><br>
+<div class="fragrance-container">
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="フルーティ">
+        <img src="{{ url_for('static', filename='image/home_image/fruity.jpg') }}" alt="フルーティ" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>フルーティ</strong>
+            <span>甘くて爽やかな果実の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="ホワイトフローラル">
+        <img src="{{ url_for('static', filename='image/home_image/ホワイトフローラル.jpg') }}" alt="ホワイトフローラル" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>ホワイトフローラル</strong>
+            <span>清楚で上品な花の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="フローラル">
+        <img src="{{ url_for('static', filename='image/home_image/フローラル.jpg') }}" alt="フローラル" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>フローラル</strong>
+            <span>甘くて爽やかな果実の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="ウッディ">
+        <img src="{{ url_for('static', filename='image/home_image/ウッディ.jpg') }}" alt="ウッディ" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>ウッディ</strong>
+            <span>深みのある落ち着いた木の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="シトラス">
+        <img src="{{ url_for('static', filename='image/home_image/シトラス.jpg') }}" alt="シトラス" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>シトラス</strong>
+            <span>清楚で上品な花の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="ムスク">
+        <img src="{{ url_for('static', filename='image/home_image/ムスク.jpg') }}" alt="ムスク" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>ムスク</strong>
+            <span>深みのある落ち着いた木の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="グリーンフローラル">
+        <img src="{{ url_for('static', filename='image/home_image/グリーンフローラル.jpg') }}" alt="グリーンフローラル" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>グリーンフローラル</strong>
+            <span>甘くて爽やかな果実の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="アロマティック">
+        <img src="{{ url_for('static', filename='image/home_image/アロマティック.jpg') }}" alt="アロマティック" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>アロマティック</strong>
+            <span>清楚で上品な花の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="パウダリー">
+        <img src="{{ url_for('static', filename='image/home_image/パウダリー.jpg') }}" alt="パウダリー" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>パウダリー</strong>
+            <span>深みのある落ち着いた木の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="グルマン">
+        <img src="{{ url_for('static', filename='image/home_image/グルマン.jpg') }}" alt="グルマン" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>グルマン</strong>
+            <span>甘くて爽やかな果実の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="グリーン">
+        <img src="{{ url_for('static', filename='image/home_image/グリーン.jpg') }}" alt="グリーン" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>グリーン</strong>
+            <span>清楚で上品な花の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="スパイシー">
+        <img src="{{ url_for('static', filename='image/home_image/スパイシー.jpg') }}" alt="スパイシー" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>スパイシー</strong>
+            <span>深みのある落ち着いた木の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="オリエンタル">
+        <img src="{{ url_for('static', filename='image/home_image/オリエンタル.jpg') }}" alt="オリエンタル" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>オリエンタル</strong>
+            <span>甘くて爽やかな果実の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="ハーバル">
+        <img src="{{ url_for('static', filename='image/home_image/ハーバル.jpg') }}" alt="ハーバル" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>ハーバル</strong>
+            <span>清楚で上品な花の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="アンバー">
+        <img src="{{ url_for('static', filename='image/home_image/アンバー.jpg') }}" alt="アンバー" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>アンバー</strong>
+            <span>深みのある落ち着いた木の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="アクア">
+        <img src="{{ url_for('static', filename='image/home_image/アクア.jpg') }}" alt="アクア" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>アクア</strong>
+            <span>深みのある落ち着いた木の香り</span>
+        </div>
+    </div>
+
+    <div class="fragrance-option">
+        <input type="checkbox" name="fragrance" value="アニマリック">
+        <img src="{{ url_for('static', filename='image/home_image/アニマリック.jpg') }}" alt="アニマリック" class="fragrance-option-img">
+        <div class="fragrance-label">
+            <strong>アニマリック</strong>
+            <span>清楚で上品な花の香り</span>
+        </div>
+    </div>
+</div>
+
+
+
+        <br>
+        <label>香りの強さ（1〜10）:<br>
+            <input type="range" name="concentration" min="1" max="10" step="1" value="5" 
+                oninput="this.nextElementSibling.value = this.value">
+            <output>10</output>
+        </label>
+        <br><br>
+
+    <!--
+    <label>好きな季節（複数選択可）:</label><br><br>
+    <div class="season-container">
+        <div class="season-option"> 
+            <img src="{{ url_for('static', filename='image/season/spring.jpg') }}" alt="春" class="season-option-img"> 
+            <br> 
+            <label><input type="checkbox" name="season" value="春"> 春</label> 
+        </div> 
+        <div class="season-option"> 
+            <img src="{{ url_for('static', filename='image/season/summer.jpg') }}" alt="夏" class="season-option-img"> 
+            <br> 
+            <label><input type="checkbox" name="season" value="夏"> 夏</label> 
+        </div> 
+        <div class="season-option"> 
+            <img src="{{ url_for('static', filename='image/season/autumn.jpg') }}" alt="秋" class="season-option-img"> 
+            <br> 
+            <label><input type="checkbox" name="season" value="秋"> 秋</label> 
+        </div> 
+        <div class="season-option"> 
+            <img src="{{ url_for('static', filename='image/season/winter.jpg') }}" alt="冬" class="season-option-img"> 
+            <br> 
+            <label><input type="checkbox" name="season" value="冬"> 冬</label> 
+        </div> 
+    </div>
+    -->
+
+    <label>好きな季節（複数選択可）:</label><br><br>
+        <div class="season-container">
+            <div class="season-option"> 
+                <img src="{{ url_for('static', filename='image/season/spring.jpg') }}" alt="春" class="season-option-img"> 
+                <br> 
+                <label><input type="checkbox" name="season" value="春" {% if season_list and "春" in season_list %}checked{% endif %}> 春</label> 
+            </div> 
+            <div class="season-option"> 
+                <img src="{{ url_for('static', filename='image/season/summer.jpg') }}" alt="夏" class="season-option-img"> 
+                <br> 
+                <label><input type="checkbox" name="season" value="夏" {% if season_list and "夏" in season_list %}checked{% endif %}> 夏</label> 
+            </div> 
+            <div class="season-option"> 
+                <img src="{{ url_for('static', filename='image/season/autumn.jpg') }}" alt="秋" class="season-option-img"> 
+                <br> 
+                <label><input type="checkbox" name="season" value="秋" {% if season_list and "秋" in season_list %}checked{% endif %}> 秋</label> 
+            </div> 
+            <div class="season-option"> 
+                <img src="{{ url_for('static', filename='image/season/winter.jpg') }}" alt="冬" class="season-option-img"> 
+                <br> 
+                <label><input type="checkbox" name="season" value="冬" {% if season_list and "冬" in season_list %}checked{% endif %}> 冬</label> 
+            </div> 
+        </div>
+
+    <label>使用シーン（複数選択可）:</label><br><br>
+    <div class="scene-container">
+        <div class="scene-option"> 
+            <img src="{{ url_for('static', filename='image/situation/普段使い.jpg') }}" alt="普段使い" class="scene-option-img"> 
+            <br> 
+            <label><input type="checkbox" name="scene" value="普段使い" {% if scene_list and "普段使い" in scene_list %}checked{% endif %}> 普段使い</label> 
+        </div> 
+        <div class="scene-option"> 
+            <img src="{{ url_for('static', filename='image/situation/ビジネス.jpg') }}" alt="ビジネス" class="scene-option-img"> 
+            <br> 
+            <label><input type="checkbox" name="scene" value="ビジネス" {% if scene_list and "ビジネス" in scene_list %}checked{% endif %}> ビジネス</label> 
+        </div> 
+        <div class="season-option"> 
+            <img src="{{ url_for('static', filename='image/situation/切り替え.jpg') }}" alt="切り替え" class="scene-option-img"> 
+            <br> 
+            <label><input type="checkbox" name="scene" value="切り替え" {% if scene_list and "切り替え" in scene_list %}checked{% endif %}> 切り替え</label> 
+        </div> 
+        <div class="season-option"> 
+            <img src="{{ url_for('static', filename='image/situation/特別な時.jpg') }}" alt="特別な時" class="scene-option-img"> 
+            <br> 
+            <label><input type="checkbox" name="scene" value="特別な時" {% if scene_list and "特別な時" in scene_list %}checked{% endif %}> 特別な時</label> 
+        </div> 
+    </div>
+
+        <br><br>
+        <label>性別:
+            <select name="gender">
+                <option value="男性">男性</option>
+                <option value="女性">女性</option>
+                <option value="ユニセックス">ユニセックス</option>
+            </select>
+        </label>
+        <br><br>
+        <button type="submit">レコメンドを見る</button>
+    </form>
+</body>
+</html>

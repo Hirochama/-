@@ -1,0 +1,78 @@
+/* 香りの選択肢のスタイル */
+.fragrance-option {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* 画像のスタイル */
+.fragrance-option-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+/* テキストのスタイル */
+.fragrance-label {
+    display: flex;
+    flex-direction: column;
+}
+
+/* チェックされたときのスタイル */
+.fragrance-option input:checked + label {
+    background-color: #e0f7fa;
+    border-color: #007bff;
+}
+
+/* 季節選択エリアのスタイル */ 
+/*.season-container { 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+
+.season-option { 
+    text-align: center; 
+    flex: 1; 
+}
+
+.season-option-img { 
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    margin-bottom: 5px; 
+    border-radius: 10px;
+}*/
+.season-container { 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.season-option { 
+    text-align: center; 
+    flex: 1; 
+    max-width: 200px;
+}
+
+.season-option-img { 
+    width: 120px; 
+    height: 120px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    transition: transform 0.2s;
+}
+
+.season-option-img:hover {
+    transform: scale(1.1);
+}
+
+

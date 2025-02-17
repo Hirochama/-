@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>レコメンド結果</title>
+</head>
+<body>
+    <h1>レコメンド結果</h1>
+    <p>あなたの入力情報</p>
+    <ul>
+        <li>予算: {{ price }}</li>
+        <li>好みの香り:
+            {% if fragrance_list %}
+                {{ ", ".join(fragrance_list) }}
+            {% else %}
+                なし
+            {% endif %}
+        </li>
+        <li>香りの強さ(1-10): {{ concentration }}</li>
+        <li>好きな季節:
+            {% if season_list %}
+                {{ ", ".join(season_list) }}
+            {% else %}
+                なし
+            {% endif %}
+        </li>
+        <li>使用シーン:
+            {% if scene_list %}
+                {{ ", ".join(scene_list) }}
+            {% else %}
+                なし
+            {% endif %}
+        </li>
+        <li>性別: {{ gender }}</li>
+    </ul>
+    <hr>
+    <h2>オススメの香水 上位{{ result_list|length }}件</h2>
+    {% if result_list %}
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>順位</th>
+                <th>ブランド名</th>
+                <th>香水名</th>
+            </tr>
+            {% for row in result_list %}
+            <tr>
+                <td>{{ row.rank }}</td>
+                <td>{{ row.brand }}</td>
+                <td>{{ row.perfume }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>該当データがありませんでした。</p>
+    {% endif %}
+    <br>
+    <a href="/">ホームに戻る</a>
+</body>
+</html>
