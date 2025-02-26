@@ -2,88 +2,41 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>レコメンド結果</title>
-    <style>
-      /* 結果画面用の簡易スタイル */
-      .result-images {
-          display: flex;
-          gap: 10px;
-          flex-wrap: wrap;
-          margin-top: 0.5rem;
-      }
-      .result-images img {
-          width: 100px;
-          height: 100px;
-          object-fit: cover;
-          border-radius: 10px;
-      }
-    </style>
+    <title>Perfume Compass - レコメンド結果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
 </head>
 <body>
-    <h1>レコメンド結果</h1>
-    <p>あなたの入力情報</p>
-    <ul>
-        <li>予算: {{ price }}</li>
-        <li>好みの香り:
-            {% if fragrance_list %}
-                {{ ", ".join(fragrance_list) }}
-                <div class="result-images result-fragrance">
-                    {% for f in fragrance_list %}
-                        <img src="{{ url_for('static', filename='image/home_image/' ~ f ~ '.jpg') }}" alt="{{ f }}">
-                    {% endfor %}
-                </div>
-            {% else %}
-                なし
-            {% endif %}
-        </li>
-        <li>香りの強さ(1-10): {{ concentration }}</li>
-        <li>好きな季節:
-            {% if season_list %}
-                {{ ", ".join(season_list) }}
-                <div class="result-images result-season">
-                    {% for s in season_list %}
-                        <img src="{{ url_for('static', filename='image/season/' ~ s ~ '.jpg') }}" alt="{{ s }}">
-                    {% endfor %}
-                </div>
-            {% else %}
-                なし
-            {% endif %}
-        </li>
-        <li>使用シーン:
-            {% if scene_list %}
-                {{ ", ".join(scene_list) }}
-                <div class="result-images result-scene">
-                    {% for sc in scene_list %}
-                        <img src="{{ url_for('static', filename='image/situation/' ~ sc ~ '.jpg') }}" alt="{{ sc }}">
-                    {% endfor %}
-                </div>
-            {% else %}
-                なし
-            {% endif %}
-        </li>
-        <li>性別: {{ gender }}</li>
-    </ul>
-    <hr>
     <h2>オススメの香水 上位{{ result_list|length }}件</h2>
-    {% if result_list %}
-        <table border="1" cellpadding="5">
-            <tr>
-                <th>順位</th>
-                <th>ブランド名</th>
-                <th>香水名</th>
-            </tr>
-            {% for row in result_list %}
-            <tr>
-                <td>{{ row.rank }}</td>
-                <td>{{ row.brand }}</td>
-                <td>{{ row.perfume }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    {% else %}
-        <p>該当データがありませんでした。</p>
-    {% endif %}
-    <br>
-    <a href="/">ホームに戻る</a>
+{% if result_list %}
+  <div class="perfume-cards">
+    {% for row in result_list %}
+      <a href="{{ row.url }}" target="_blank">
+        <div class="perfume-card">
+          <div class="rank-badge">{{ row.rank }}</div>
+          <img src="{{ url_for('static', filename='image/result/' ~ row.perfume ~ '.webp') }}" alt="{{ row.perfume }}" class="perfume-image">
+          <div class="card-content">
+            <h3 class="perfume-name">{{ row.perfume }}</h3>
+            <p class="brand-name">{{ row.brand }}</p>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>該当データがありませんでした。</p>
+{% endif %}
+
+<div class="result-buttons">
+  <a href="/" class="button">ホームに戻る</a>
+  <a href="{{ url_for('home_form') }}" class="button">もう一度診断する</a>
+</div>
+
+<footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Perfume Compass</p>
+    </div>
+  </footer>
+
 </body>
 </html>
+

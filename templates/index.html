@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>香水レコメンド - ホーム</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='index25.css') }}">
+  <title>Perfume Compass - ホーム</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
   <header class="hero">
@@ -14,38 +14,83 @@
       <a class="cta-btn" href="{{ url_for('home_form') }}">診断を始める</a>
     </div>
   </header>
+  <br>
 
   <section class="intro">
     <div class="container intro-container">
-      <h2>香水選びに困っていませんか？</h2>
+      <h1>香水選びに困っていませんか？</h1><br>
       <div class="image-container">
-        <img src="{{ url_for('static', filename='image/home/悩んでる2.png') }}" alt="悩んでいる人" class="thinking-image">
+        <img src="{{ url_for('static', filename='image/home/悩んでる.png') }}" alt="悩んでいる人" class="thinking-image">
         <div class="speech-bubble bubble1">種類が多すぎる...</div>
         <div class="speech-bubble bubble2">どれが合うかな？</div>
         <div class="speech-bubble bubble3">高いから失敗できない...</div>
       </div>
     </div>
   </section>
-
-  <section class="steps">
-    <div class="container">
-      <h3>診断手順</h3>
-      <div class="step-cards">
-        <div class="card">
-          <h4>Step 1</h4>
-          <p>いくつか質問するので、画像や説明文から直感的に選んでください。</p>
-        </div>
-        <div class="card">
-          <h4>Step 2</h4>
-          <p>選んでいただいた内容から、あなたにピッタリの香水をご提示します。</p>
-        </div>
-        <div class="card">
-          <h4>Step 3</h4>
-          <p>実際にお店に足を運んで、試してみてください。</p>
-        </div>
+  <br>
+  <!-- ▼▼▼ ここから Concept セクションを追加 ▼▼▼ -->
+  <section class="concept">
+    <div class="concept-background">
+      <div class="concept-content">
+        <h2>そんな方に．．．</h2>
+        <!-- 「」を目立たせるため、クラスやタグを工夫 -->
+        <h3 class="highlight1">「AIによる香水レコメンド」</h3>
+        <p>
+          <span class="highlight2">「より多くの人に香水の良さを知ってもらいたい」</span><br>
+          という思いから作られたサイトです。<br>
+          香水について知らない人にも、<br>香水を<span class="highlight2">「直感的」</span>に、<span class="highlight2">「楽しく」</span>選んでいただけます。<br>
+          搭載されたAIにより、あなたに合った<br><span class="highlight2">「香水」</span>をレコメンドさせていただきます。
+        </p>
       </div>
     </div>
   </section>
+  <!-- ▲▲▲ Concept セクション追加ここまで ▲▲▲ -->
+
+  <section class="steps">
+    <div class="container">
+      <h3>＜ 診断手順 ＞</h3>
+      <div class="step-cards">
+  
+        <!-- Step 1 -->
+        <div class="card">
+          <!-- スマホ画像 -->
+          <img src="{{ url_for('static', filename='image/home/スマホ.png') }}" 
+               alt="スマホ" 
+               class="step-image">
+          <h4>Step 1: 質問回答</h4>
+          <p>いくつか質問するので、画像や説明文から直感的に選んでください。</p>
+        </div>
+  
+        <!-- Step 2 -->
+        <div class="card">
+          <!-- データ画像 -->
+          <img src="{{ url_for('static', filename='image/home/データ.png') }}" 
+               alt="データ" 
+               class="step-image data-image">
+          <h4>Step 2: AIによる分析</h4>
+          <p>選んでいただいた内容をAIが分析します。</p>
+        </div>
+  
+        <!-- Step 3 -->
+        <div class="card">
+          <!-- 買い物画像(香水を試すイラスト) -->
+          <img src="{{ url_for('static', filename='image/home/喜ぶ.png') }}" 
+               alt="買い物" 
+               class="step-image">
+          <h4>Step 3: レコメンド</h4>
+          <p>あなたにピッタリの香水をご提示します。ぜひ試してみてください。</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <section class="start-diagnosis">
+    <div class="container">
+        <a class="cta-btn" href="{{ url_for('home_form') }}">診断を始める</a>
+    </div>
+  </section>
+
 
   <footer>
     <div class="container">
