@@ -1,78 +1,283 @@
-/* 香りの選択肢のスタイル */
-.fragrance-option {
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: url('image/home/香水2.jpg') no-repeat center center/cover;
+    height: 30vh; 
     display: flex;
     align-items: center;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    justify-content: center;
+    color: #333;
+    text-align: center;
+    padding: 0;
 }
 
-/* 画像のスタイル */
-.fragrance-option-img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 10px;
-    border-radius: 5px;
-}
-/* テキストのスタイル */
-.fragrance-label {
-    display: flex;
-    flex-direction: column;
+.header-container h1 {
+    font-size: 2.5rem;
+    margin: 0;
 }
 
-/* チェックされたときのスタイル */
-.fragrance-option input:checked + label {
-    background-color: #e0f7fa;
-    border-color: #007bff;
-}
-
-/* 季節選択エリアのスタイル */ 
-/*.season-container { 
-    display: flex; 
-    justify-content: space-around; 
-    align-items: center; 
-    margin-bottom: 20px; 
-}
-
-.season-option { 
-    text-align: center; 
-    flex: 1; 
-}
-
-.season-option-img { 
-    width: 150px; 
-    height: 150px; 
-    object-fit: cover; 
-    margin-bottom: 5px; 
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
     border-radius: 10px;
-}*/
-.season-container { 
-    display: flex; 
-    justify-content: center; 
-    gap: 20px;
-    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.season-option { 
-    text-align: center; 
-    flex: 1; 
-    max-width: 200px;
+.form-step {
+    text-align: center;
+  }  
+
+/* フォーム全体のスタイル */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
-.season-option-img { 
-    width: 120px; 
-    height: 120px; 
-    object-fit: cover; 
-    border-radius: 10px; 
+form input[type="number"],
+form input[type="range"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+  /* 香りの強さバーのスタイル */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    outline: none;
+    margin: 20px 0;
+}
+
+/* 香りの強さスライダーの数値を目立たせるスタイル */
+input[type="range"] + output {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Webkit（Chrome, Safari）用のつまみ */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: #7D5BA6;  /* 紫色 */
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -7px; /* トラックに合わせて調整 */
     transition: transform 0.2s;
 }
 
-.season-option-img:hover {
-    transform: scale(1.1);
+/* Firefox 用のつまみ */
+input[type="range"]::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    background: #7D5BA6;  /* 紫色 */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
+/* ホバー時のエフェクト */
+input[type="range"]:hover::-webkit-slider-thumb {
+    transform: scale(1.1);
+}
+  
 
+/* Fragrance Options */
+.fragrance-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+/* 季節・シーンのオプションを横並びにする */
+.season-container,
+.scene-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* カード型デザイン（香り・季節・シーン） */
+.fragrance-option,
+.season-option,
+.scene-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    width: 220px;  /* カードの幅を固定 */
+    text-align: center;  /* テキスト中央揃え */
+}
+
+/* 選択状態でカードを青線+シャドウで囲む */
+.fragrance-option:has(input:checked)::before,
+.season-option:has(input:checked)::before,
+.scene-option:has(input:checked)::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 4px solid purple;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(230, 97, 212, 0.5);
+    pointer-events: none;
+}
+
+/* ホバー時のエフェクト（共通） */
+.fragrance-option:hover,
+.season-option:hover,
+.scene-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* チェックボックスは非表示（共通） */
+.fragrance-option input,
+.season-option input,
+.scene-option input {
+    display: none;
+}
+
+/* 画像スタイル（香り） */
+.fragrance-option-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease-in-out;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 画像スタイル（季節・シーン） */
+.season-option-img,
+.scene-option-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease-in-out;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ホバー時の拡大（共通） */
+.fragrance-option-img:hover,
+.season-option-img:hover,
+.scene-option-img:hover {
+    transform: scale(1.05);
+}
+
+/* 選択時の背景色（共通） */
+.fragrance-option input:checked + .fragrance-option-content,
+.season-option input:checked + label,
+.scene-option input:checked + label {
+    background-color: #e0f7fa;
+}
+
+/* 香りラベル内のテキスト装飾 */
+.fragrance-label strong {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.fragrance-label span {
+    display: block;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #555;
+}
+
+/* 季節・シーンのテキスト（カード下部のラベル） */
+.season-option label,
+.scene-option label {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* テーブルスタイル（結果ページ用） */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th,
+table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table thead {
+    background-color: #7D5BA6;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #7D5BA6;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+/* ユーティリティ */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}

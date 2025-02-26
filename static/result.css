@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f7f9fc, #e9ecef);
+  color: #333;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 800px;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+.result-table th, 
+.result-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.result-table th {
+    background-color: #7D5BA6;
+    color: #fff;
+}
+
+.result-table img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* 結果画像グループ */
+.result-images {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+  
+  .result-images img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Perfume Card Styles */
+  .perfume-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin: 30px auto;
+    max-width: 1200px;
+  }
+  
+  .perfume-cards a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .perfume-card {
+    position: relative;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .perfume-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  
+  .rank-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #7D5BA6;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 1;
+  }
+  
+  .perfume-image {
+    width: calc(100% - 20px);
+    margin: 10px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .perfume-card:hover .perfume-image {
+    transform: scale(1.02);
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+  
+  .perfume-name {
+    margin: 10px 0 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  
+  .brand-name {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Buttons */
+  .result-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  
+  .result-buttons .button {
+    display: inline-block;
+    background: #7D5BA6;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .result-buttons .button:hover {
+    background: #6C4A90;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #7D5BA6;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+  }
+  

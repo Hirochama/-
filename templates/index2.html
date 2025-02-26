@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>香水レコメンド - ホーム</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='index10.css') }}">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>香水レコメンド</h1>
+      <p>あなたの「香水」診断</p>
+      <a class="cta-btn" href="{{ url_for('home_form') }}">診断を始める</a>
+    </div>
+  </header>
+  
+  <section class="intro">
+    <div class="container">
+      <h2>香水選びに困っていませんか？</h2>
+      <p>あなたにピッタリの「香水」、見つけてみませんか？</p>
+    </div>
+  </section>
+  
+  <section class="steps">
+    <div class="container">
+      <h3>診断手順</h3>
+      <div class="step-cards">
+        <div class="card">
+          <h4>Step 1</h4>
+          <p>いくつか質問するので、画像や説明文から直感的に選んでください。</p>
+        </div>
+        <div class="card">
+          <h4>Step 2</h4>
+          <p>選んでいただいた内容から、あなたにピッタリの香水をご提示します。</p>
+        </div>
+        <div class="card">
+          <h4>Step 3</h4>
+          <p>実際にお店に足を運んで、試してみてください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 香水レコメンドサイト</p>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='home.js') }}"></script>
+</body>
+</html>

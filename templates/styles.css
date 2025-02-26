@@ -1,0 +1,37 @@
+/* 香りの選択肢のスタイル */
+.fragrance-option {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* 画像のスタイル */
+.event-image {
+    width: 40%;
+    height:  330px;
+}
+
+.fragrance-option-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+/* テキストのスタイル */
+.fragrance-label {
+    display: flex;
+    flex-direction: column;
+}
+
+/* チェックされたときのスタイル */
+.fragrance-option input:checked + label {
+    background-color: #e0f7fa;
+    border-color: #007bff;
+}
